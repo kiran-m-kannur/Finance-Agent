@@ -1,0 +1,43 @@
+{
+  "profile": {
+    "name": "Priya Sharma",
+    "age": 28,
+    "city": "Bangalore",
+    "currency": "INR",
+    "monthly_income": 120000,
+    "income_credited_on_day": 1,
+    "stated_goal": "Save 15 lakh in 2 years for a house down payment in Bangalore"
+  },
+  "facts": [
+    {
+      "text": "User feels they are spending too much on food delivery.",
+      "saved_on": "2025-11-03"
+    },
+    {
+      "text": "The user has a colleague selling a barely used MacBook for \u20b980,000.",
+      "saved_on": "2025-11-06"
+    },
+    {
+      "text": "The user has been wanting to upgrade their MacBook.",
+      "saved_on": "2025-11-06"
+    }
+  ],
+  "commitments": [
+    {
+      "text": "User plans to cut their food delivery spending in half.",
+      "saved_on": "2025-11-03"
+    },
+    {
+      "text": "User plans to put aside \u20b930,000 for their house fund this month.",
+      "saved_on": "2025-11-03"
+    },
+    {
+      "text": "The user has committed to saving \u20b930,000 for their house fund this month.",
+      "saved_on": "2025-11-06"
+    }
+  ],
+  "last_session": {
+    "date": "2025-11-06",
+    "summary": "The user is considering buying a MacBook from a colleague but is concerned about financial strain due to existing commitments and bills."
+  }
+}
