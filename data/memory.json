@@ -14,30 +14,46 @@
       "saved_on": "2025-11-03"
     },
     {
-      "text": "The user has a colleague selling a barely used MacBook for \u20b980,000.",
+      "text": "User spent \u20b912,240 on food delivery last month across 9 transactions.",
+      "saved_on": "2025-11-03"
+    },
+    {
+      "text": "User is considering upgrading to a MacBook.",
       "saved_on": "2025-11-06"
     },
     {
-      "text": "The user has been wanting to upgrade their MacBook.",
+      "text": "User has a goal to save for a house.",
+      "saved_on": "2025-11-06"
+    },
+    {
+      "text": "User is considering upgrading their MacBook.",
+      "saved_on": "2025-11-06"
+    },
+    {
+      "text": "User's colleague is selling a barely used MacBook for \u20b980,000.",
       "saved_on": "2025-11-06"
     }
   ],
   "commitments": [
     {
-      "text": "User plans to cut their food delivery spending in half.",
+      "text": "User plans to cut food delivery spending in half this month.",
       "saved_on": "2025-11-03"
     },
     {
-      "text": "User plans to put aside \u20b930,000 for their house fund this month.",
+      "text": "User plans to transfer \u20b930,000 to their house fund on the 25th.",
       "saved_on": "2025-11-03"
     },
     {
-      "text": "The user has committed to saving \u20b930,000 for their house fund this month.",
+      "text": "User is planning to transfer \u20b930,000 to their house fund on the 25th.",
       "saved_on": "2025-11-06"
+    },
+    {
+      "text": "User plans to transfer \u20b930,000 to their house fund on November 25.",
+      "saved_on": "2025-11-03"
     }
   ],
   "last_session": {
     "date": "2025-11-06",
-    "summary": "The user is considering buying a MacBook from a colleague but is concerned about financial strain due to existing commitments and bills."
+    "summary": "User is contemplating buying a MacBook from a colleague but is concerned about liquidity after upcoming expenses and a planned transfer to their house fund."
   }
 }

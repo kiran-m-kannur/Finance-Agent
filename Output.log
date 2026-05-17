@@ -1,0 +1,361 @@
+
+
+-------------------------------------------------- SESSION 1 ----------------------------------------------------------------------- 
+
+--- session_start ---
+backend=openai model=gpt-4o today=2025-11-03
+
+--- memory_loaded ---
+{
+  "profile": {
+    "name": "Priya Sharma",
+    "age": 28,
+    "city": "Bangalore",
+    "currency": "INR",
+    "monthly_income": 120000,
+    "income_credited_on_day": 1,
+    "stated_goal": "Save 15 lakh in 2 years for a house down payment in Bangalore"
+  },
+  "facts": [
+    {
+      "text": "User feels they are spending too much on food delivery.",
+      "saved_on": "2025-11-03"
+    },
+    {
+      "text": "User spent \u20b912,240 on food delivery last month across 9 transactions.",
+      "saved_on": "2025-11-03"
+    },
+    {
+      "text": "User is considering upgrading to a MacBook.",
+      "saved_on": "2025-11-06"
+    },
+    {
+      "text": "User has a goal to save for a house.",
+      "saved_on": "2025-11-06"
+    }
+  ],
+  "commitments": [
+    {
+      "text": "User plans to cut food delivery spending in half this month.",
+      "saved_on": "2025-11-03"
+    },
+    {
+      "text": "User plans to transfer \u20b930,000 to their house fund on the 25th.",
+      "saved_on": "2025-11-03"
+    },
+    {
+      "text": "User is planning to transfer \u20b930,000 to their house fund on the 25th.",
+      "saved_on": "2025-11-06"
+    }
+  ],
+  "last_session": {
+    "date": "2025-11-06",
+    "summary": "User is contemplating buying a MacBook from a colleague but is concerned about financial commitments and saving for a house."
+  }
+}
+
+--- user ---
+I just got my salary credited. Help me figure out how much I can realistically save this month.
+
+--- tool:get_account_balance ---
+args={}
+result={"checking": 128000, "savings": 145000, "house_fund": 95000, "mutual_funds": 280000}
+
+--- tool:get_upcoming_bills ---
+args={"days": 30}
+result=[{"date": "2025-11-05", "amount": 25000, "description": "Rent (auto-debit)"}, {"date": "2025-11-10", "amount": 10000, "description": "SIP - Mutual Funds"}, {"date": "2025-11-15", "amount": 3500, "description": "Internet + Mobile"}, {"date": "2025-11-20", "amount": 8000, "description": "Credit Card (auto-debit)"}]
+
+--- tool:summarize_spending ---
+args={"category": "food_delivery", "start_date": "2025-11-01", "end_date": "2025-11-03"}
+result={"category": "food_delivery", "start_date": "2025-11-01", "end_date": "2025-11-03", "total_spent": 650, "transaction_count": 1}
+
+--- assistant ---
+Here's a breakdown of your current financial situation and upcoming obligations:
+
+### Current Balances:
+- **Checking Account:** ₹1,28,000
+- **Savings Account:** ₹1,45,000
+- **House Fund:** ₹95,000
+- **Mutual Funds:** ₹2,80,000
+
+### Upcoming Bills (Next 30 Days):
+- **Rent:** ₹25,000 on November 5
+- **SIP - Mutual Funds:** ₹10,000 on November 10
+- **Internet + Mobile:** ₹3,500 on November 15
+- **Credit Card:** ₹8,000 on November 20
+
+### Recent Spending:
+- **Food Delivery:** ₹650 spent from November 1 to November 3
+
+### Analysis:
+1. **Total Upcoming Bills:** ₹46,500
+2. **Planned Transfer to House Fund:** ₹30,000 on November 25
+3. **Food Delivery Commitment:** You plan to cut this spending in half this month.
+
+### Recommendations:
+- **Total Obligations:** ₹76,500 (₹46,500 bills + ₹30,000 house fund transfer)
+- **Available for Other Expenses and Savings:** ₹51,500 (₹1,28,000 - ₹76,500)
+
+You can realistically save or allocate the remaining ₹51,500 after covering your obligations and planned house fund transfer. Adjust your discretionary spending, especially on food delivery, to maximize savings toward your house goal.
+
+--- user ---
+I feel like I'm spending too much on food delivery. How much did I actually spend on it last month?
+
+--- tool:summarize_spending ---
+args={"category":"food_delivery","start_date":"2025-10-01","end_date":"2025-10-31"}
+result={"category": "food_delivery", "start_date": "2025-10-01", "end_date": "2025-10-31", "total_spent": 12240, "transaction_count": 9}
+
+--- assistant ---
+Last month, you spent a total of ₹12,240 on food delivery across 9 transactions.
+
+--- user ---
+Okay that's worse than I thought. Let's say I want to cut that in half AND put aside ₹30,000 for my house fund this month — is that realistic given my upcoming bills?
+
+--- assistant ---
+Here's how your plan looks with the adjustments:
+
+### Planned Spending:
+- **Food Delivery:** Targeting to cut in half, so around ₹6,120
+- **House Fund Transfer:** ₹30,000 on November 25
+
+### Upcoming Bills:
+- **Total Bills:** ₹46,500
+
+### Total Obligations:
+- **Bills + House Fund Transfer:** ₹76,500
+
+### Available Funds:
+- **Current Checking Balance:** ₹1,28,000
+- **Remaining after Obligations:** ₹51,500
+
+### Analysis:
+- **Discretionary Spending (including reduced food delivery):** ₹6,120
+- **Remaining for Other Savings/Expenses:** ₹45,380 (₹51,500 - ₹6,120)
+
+Yes, it's realistic to cut your food delivery spending in half and still transfer ₹30,000 to your house fund this month. You'll have ₹45,380 left for other expenses or additional savings after meeting these commitments.
+
+--- user ---
+Got it. Remind me to actually transfer the ₹30,000 to my house fund on the 25th.
+
+--- tool:set_reminder ---
+args={"date":"2025-11-25","content":"Transfer ₹30,000 to house fund."}
+result={"status": "set", "reminder_id": "rem_2072", "date": "2025-11-25", "content": "Transfer \u20b930,000 to house fund."}
+
+--- assistant ---
+Reminder set to transfer ₹30,000 to your house fund on the 25th.
+
+--- memory_sweep_raw ---
+{
+  "facts": [
+    "User feels they are spending too much on food delivery.",
+    "User spent ₹12,240 on food delivery last month across 9 transactions."
+  ],
+  "commitments": [
+    "User plans to cut food delivery spending in half this month.",
+    "User plans to transfer ₹30,000 to their house fund on November 25."
+  ],
+  "summary": "The user is focusing on reducing food delivery expenses and plans to transfer ₹30,000 to their house fund this month."
+}
+
+--- memory_saved ---
+{
+  "profile": {
+    "name": "Priya Sharma",
+    "age": 28,
+    "city": "Bangalore",
+    "currency": "INR",
+    "monthly_income": 120000,
+    "income_credited_on_day": 1,
+    "stated_goal": "Save 15 lakh in 2 years for a house down payment in Bangalore"
+  },
+  "facts": [
+    {
+      "text": "User feels they are spending too much on food delivery.",
+      "saved_on": "2025-11-03"
+    },
+    {
+      "text": "User spent \u20b912,240 on food delivery last month across 9 transactions.",
+      "saved_on": "2025-11-03"
+    },
+    {
+      "text": "User is considering upgrading to a MacBook.",
+      "saved_on": "2025-11-06"
+    },
+    {
+      "text": "User has a goal to save for a house.",
+      "saved_on": "2025-11-06"
+    }
+  ],
+  "commitments": [
+    {
+      "text": "User plans to cut food delivery spending in half this month.",
+      "saved_on": "2025-11-03"
+    },
+    {
+      "text": "User plans to transfer \u20b930,000 to their house fund on the 25th.",
+      "saved_on": "2025-11-03"
+    },
+    {
+      "text": "User is planning to transfer \u20b930,000 to their house fund on the 25th.",
+      "saved_on": "2025-11-06"
+    },
+    {
+      "text": "User plans to transfer \u20b930,000 to their house fund on November 25.",
+      "saved_on": "2025-11-03"
+    }
+  ],
+  "last_session": {
+    "date": "2025-11-03",
+    "summary": "The user is focusing on reducing food delivery expenses and plans to transfer \u20b930,000 to their house fund this month."
+  }
+}
+
+
+
+
+
+
+--------------------------------------------------  SESSION 2 ----------------------------------------------------------------------- 
+
+--- session_start ---
+backend=openai model=gpt-4o today=2025-11-06
+
+--- memory_loaded ---
+{
+  "profile": {
+    "name": "Priya Sharma",
+    "age": 28,
+    "city": "Bangalore",
+    "currency": "INR",
+    "monthly_income": 120000,
+    "income_credited_on_day": 1,
+    "stated_goal": "Save 15 lakh in 2 years for a house down payment in Bangalore"
+  },
+  "facts": [
+    {
+      "text": "User feels they are spending too much on food delivery.",
+      "saved_on": "2025-11-03"
+    },
+    {
+      "text": "User spent \u20b912,240 on food delivery last month across 9 transactions.",
+      "saved_on": "2025-11-03"
+    },
+    {
+      "text": "User is considering upgrading to a MacBook.",
+      "saved_on": "2025-11-06"
+    },
+    {
+      "text": "User has a goal to save for a house.",
+      "saved_on": "2025-11-06"
+    }
+  ],
+  "commitments": [
+    {
+      "text": "User plans to cut food delivery spending in half this month.",
+      "saved_on": "2025-11-03"
+    },
+    {
+      "text": "User plans to transfer \u20b930,000 to their house fund on the 25th.",
+      "saved_on": "2025-11-03"
+    },
+    {
+      "text": "User is planning to transfer \u20b930,000 to their house fund on the 25th.",
+      "saved_on": "2025-11-06"
+    },
+    {
+      "text": "User plans to transfer \u20b930,000 to their house fund on November 25.",
+      "saved_on": "2025-11-03"
+    }
+  ],
+  "last_session": {
+    "date": "2025-11-03",
+    "summary": "The user is focusing on reducing food delivery expenses and plans to transfer \u20b930,000 to their house fund this month."
+  }
+}
+
+--- user ---
+Hey, my colleague is selling his MacBook for ₹80,000, barely used. I've been wanting to upgrade. Should I buy it?
+
+--- tool:get_account_balance ---
+args={}
+result={"checking": 99820, "savings": 145000, "house_fund": 95000, "mutual_funds": 280000}
+
+--- tool:get_upcoming_bills ---
+args={"days": 30}
+result=[{"date": "2025-11-10", "amount": 10000, "description": "SIP - Mutual Funds"}, {"date": "2025-11-15", "amount": 3500, "description": "Internet + Mobile"}, {"date": "2025-11-20", "amount": 8000, "description": "Credit Card (auto-debit)"}]
+
+--- assistant ---
+You have ₹99,820 in your checking account and upcoming bills totaling ₹21,500 over the next month. You also plan to transfer ₹30,000 to your house fund on the 25th. Buying the MacBook for ₹80,000 would leave you with limited liquidity for the rest of the month, potentially affecting your ability to cover unexpected expenses or stick to your savings plan. If upgrading is a priority, consider negotiating a lower price or delaying the purchase until your financial situation is more flexible.
+
+--- memory_sweep_raw ---
+{
+  "facts": [
+    "User is considering upgrading their MacBook.",
+    "User's colleague is selling a barely used MacBook for ₹80,000."
+  ],
+  "commitments": [
+    "User plans to transfer ₹30,000 to their house fund on the 25th."
+  ],
+  "summary": "User is contemplating buying a MacBook from a colleague but is concerned about liquidity after upcoming expenses and a planned transfer to their house fund."
+}
+
+--- memory_saved ---
+{
+  "profile": {
+    "name": "Priya Sharma",
+    "age": 28,
+    "city": "Bangalore",
+    "currency": "INR",
+    "monthly_income": 120000,
+    "income_credited_on_day": 1,
+    "stated_goal": "Save 15 lakh in 2 years for a house down payment in Bangalore"
+  },
+  "facts": [
+    {
+      "text": "User feels they are spending too much on food delivery.",
+      "saved_on": "2025-11-03"
+    },
+    {
+      "text": "User spent \u20b912,240 on food delivery last month across 9 transactions.",
+      "saved_on": "2025-11-03"
+    },
+    {
+      "text": "User is considering upgrading to a MacBook.",
+      "saved_on": "2025-11-06"
+    },
+    {
+      "text": "User has a goal to save for a house.",
+      "saved_on": "2025-11-06"
+    },
+    {
+      "text": "User is considering upgrading their MacBook.",
+      "saved_on": "2025-11-06"
+    },
+    {
+      "text": "User's colleague is selling a barely used MacBook for \u20b980,000.",
+      "saved_on": "2025-11-06"
+    }
+  ],
+  "commitments": [
+    {
+      "text": "User plans to cut food delivery spending in half this month.",
+      "saved_on": "2025-11-03"
+    },
+    {
+      "text": "User plans to transfer \u20b930,000 to their house fund on the 25th.",
+      "saved_on": "2025-11-03"
+    },
+    {
+      "text": "User is planning to transfer \u20b930,000 to their house fund on the 25th.",
+      "saved_on": "2025-11-06"
+    },
+    {
+      "text": "User plans to transfer \u20b930,000 to their house fund on November 25.",
+      "saved_on": "2025-11-03"
+    }
+  ],
+  "last_session": {
+    "date": "2025-11-06",
+    "summary": "User is contemplating buying a MacBook from a colleague but is concerned about liquidity after upcoming expenses and a planned transfer to their house fund."
+  }
+}

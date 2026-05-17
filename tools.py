@@ -9,7 +9,7 @@ flip CURRENT_SESSION from 1 to 2 before running Session 2.
 
 # Session 1 = Monday, Nov 3, 2025 (salary just credited that morning)
 # Session 2 = Thursday, Nov 6, 2025 (rent has been paid, a few more food orders)
-CURRENT_SESSION = 2 # flip to 2 before running session 2
+CURRENT_SESSION = 1# flip to 2 before running session 2
 
 
 def get_recent_transactions(days: int) -> list[dict]:

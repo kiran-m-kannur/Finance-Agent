@@ -6,7 +6,7 @@ from agent.memory import load as load_memory, render_for_prompt, save as save_me
 from agent.prompts import MEMORY_EXTRACTION_PROMPT, SYSTEM_PROMPT
 from agent.tool_registry import TOOL_SCHEMAS, build_dispatch, execute
 
-MAX_TOOL_HOPS = 8  # safety bound per user turn
+MAX_TOOL_HOPS = 4
 
 
 def _log(role: str, content: str) -> None:
